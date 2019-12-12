@@ -5,20 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Teleportation Machine</title>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        html,body {
+            height: 100%
+        } 
+        .Absolute-Center {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }
+        .Absolute-Center.is-Responsive {
+            width: 50%; 
+            height: 50%;
+            min-width: 300px;
+            max-width: 600px;
+            padding: 0px 40px 40px 60px;
+        }
+        #Title{
+            margin: auto;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     {% load crispy_forms_tags %}
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h1 class="mt-2">The Teleportation Machine</h1>
-                <hr class="mt-0 mb-4">
-                <form method="post" novalidate>
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button type='submit' class="btn btn-primary">Teleport!</button>
-                </form>
+        <div class="row ">
+            <div class="Absolute-Center is-Responsive">
+                <div id="Title">
+                    <h1 class="mt-2 text-center">The</h1>
+                    <h1 class="mt-2 text-center">Teleportation Machine</h1>
+                    <hr class="mt-0 mb-4">
+                </div>
+                <div class="col-sm-12  col-10 col-md-offset-1">
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type='submit' class="btn btn-primary btn-block" style="margin-bottom: 10px;margin-top: 20px;">Teleport!</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
